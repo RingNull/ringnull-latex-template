@@ -1,0 +1,53 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{amssymb}
+\usepackage[outputdir=./aux]{minted} % I run latex with -auxdir=%OUTDIR%/aux. Remove this if you don't, 
+\usepackage{colortbl}
+\usepackage[backend=biber, defernumbers=true, doi=false, style=numeric-comp]{biblatex}
+\addbibresource{example.bib}
+\usetheme[purple]{ringnull}
+
+\newcommand{\testcolor}[1]{\colorbox{#1}{\textcolor{#1}{test}}~\texttt{#1}}
+
+\title{Ring\texorpdfstring{$\varnothing$}{Null} Presentation Template}
+\subtitle{Designed for Ring\texorpdfstring{$\varnothing$}{Null}}
+\author{}
+
+
+
+\begin{document}
+\maketitle
+
+%-------------------------------------------------------------------
+% Presentation Start
+%-------------------------------------------------------------------
+
+%\begingroup
+%    \begin{frame}[plain,noframenumbering]{Table of Contents}
+%       \tableofcontents
+%    \end{frame}
+%\endgroup
+
+\begin{frame}{Introduction}
+    \begin{itemize}
+        \item Hello! This template is based off the work of many smart people. 
+        \begin{itemize}
+          \item Focus theme by \href{mailto:pafrica@sissa.it}{Pasquale Claudio Africa} and \href{mailto:sfriedl@sissa.it}{Sebastian Friedl}.
+          \item Statale theme adapted by \href{mailto:srikar.sadhu@research.iiit.ac.in}{Srikar Sharma Sadhu} for IIIT-Hyderabad
+          \item \href{ciao@gio.im}{Giorgio Marchetti} for Statale presentations. 
+          \item Original template by \href{federico.zenith@sintef.no}{Federico Zenith}, derived from Håvard Berland's beamerthementnu class.
+        \end{itemize}
+        \item The RingNull beamer template is released under the \href{http://www.gnu.org/licenses/}{GNU General Public License}.
+    \end{itemize}
+\end{frame}
+
+
+\input{Sections/Examples}
+
+\input{Sections/Color Palette}
+
+%-------------------------------------------------------------------
+% Presentation End
+%-------------------------------------------------------------------
+
+\backmatter
+\end{document}

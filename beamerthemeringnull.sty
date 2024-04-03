@@ -1,0 +1,520 @@
+%
+% RingNull LaTeX Beamer Theme
+%
+% This theme combines elements from the Statale and Focus themes.
+%
+% Contributions:
+% - Statale theme adapted by Srikar Sharma Sadhu (srikar.sadhu@research.iiit.ac.in) for IIIT-Hyderabad
+% - Giorgio Marchetti (ciao@gio.im) for Statale presentations. 
+% - Original template by Federico Zenith (federico.zenith@sintef.no)
+% 		derived from Håvard Berland's beamerthementnu class.
+% - Focus theme by Pasquale Claudio Africa (2018) and Sebastian Friedl (2018).
+%
+% This RingNull theme is free software: you can redistribute it and/or modify it 
+% under the terms of the GNU General Public License as published by the 
+% Free Software Foundation, either version 3 of the License, or (at your option) 
+% any later version.
+%
+% This theme is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+% without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+% See the GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License along with this program. 
+% If not, see <http://www.gnu.org/licenses/>.
+%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeringnull}[2024/03/20]
+
+\RequirePackage{etoolbox}
+\RequirePackage{tikz}
+\RequirePackage{scalefnt}
+\RequirePackage[most]{tcolorbox}
+
+\mode<presentation>
+
+%-------------------------------------------------------------------
+%	Fonts
+%-------------------------------------------------------------------
+
+\RequirePackage{amsfonts,amsmath}
+\usepackage[T1]{fontenc}
+
+\usepackage[default,scale=1.0]{opensans}
+\RequirePackage[scale=1.0]{FiraMono}
+\renewcommand{\familydefault}{\sfdefault}
+
+\setbeamerfont{author}{size=\scriptsize}
+\setbeamerfont{date}{size=\scriptsize}
+\setbeamerfont{title}{series=\Huge\bfseries}
+\setbeamerfont{sectiontitle}{series=\Huge\bfseries}
+\setbeamerfont{subtitle}{series=\mdseries,size=\footnotesize}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{framesubtitle}{series=\mdseries}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{block title}{series=\centering\bfseries}
+\setbeamerfont{description item}{shape=\bfseries}
+
+% Bullets in several levels
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize subitem}[square]
+\setbeamertemplate{itemize subsubitem}{\ensuremath{\circ}}
+
+% Bibliography Styles
+\setbeamercolor{bibliography entry author}{fg=textFG}
+\setbeamercolor{bibliography item}{fg=textFG}
+\setbeamerfont{bibliography item}{size=\small}
+\setbeamerfont{bibliography entry title}{size=\small, series=\bfseries}
+\setbeamerfont{bibliography entry location}{size=\small}
+\setbeamerfont{bibliography entry note}{size=\small}
+
+%-------------------------------------------------------------------
+% Tweaks
+%-------------------------------------------------------------------
+
+% No navigation symbols
+\beamertemplatenavigationsymbolsempty
+
+% Replace beamers boxes with tcolorboxes. 
+\useinnertheme[rounded]{tcolorbox}
+\tcbsetforeverylayer{
+  oversize=-0.3cm,
+}
+
+% avoid numbering of frames that are breaked into multiply slides
+\setbeamertemplate{frametitle continuation}{}
+
+% redefine \emph to be colored
+\setbeamercolor{emph}{fg=lighterColor}
+\renewcommand<>{\emph}[1]{%
+  {\usebeamercolor[fg]{emph}\only#2{\itshape}#1}%
+}
+
+% Give tables a little room to breath
+\renewcommand{\arraystretch}{1.15}
+
+%-------------------------------------------------------------------
+% Colors
+%-------------------------------------------------------------------
+
+\RequirePackage{graphicx, xcolor, hyperref}
+
+% lighterColor, lightColor, mainColor, darkColor and darkerColor 
+% are all controled by \applyCyRed, \applyCyBlue and \applyCyPurple
+% If that isn't set, it defaults to grey. 
+
+\definecolorset{HTML}{cy}{purple}{%
+  lighter,     8058C5;%
+  light,       6536B6;%
+  main,        4C11B1;% 
+  dark,        3A0C8A;%
+  darker,      2C086C;%
+  alert,       9204AB;%
+  example,     182AB3;%
+  table,       a38dc9
+}
+
+\definecolorset{HTML}{cy}{red}{%
+  lighter,     EB5882;%
+  light,       E73064;%
+  main,        DC003F;%
+  dark,        AE0032;%
+  darker,      880027;%
+  alert,       FF7134;%
+  example,     AD24A7;%
+  table,       c98d9e
+}
+
+\definecolorset{HTML}{cy}{blue}{%
+  lighter,     4D88B8;%
+  light,       2C70A8;%
+  main,        0B5B9E;%
+  dark,        08487C;%
+  darker,      053761;%
+  alert,       3D3BB5;%
+  example,     25B179;%
+  table,       8daec9
+}
+
+\definecolorset{HTML}{cy}{green}{%
+  lighter,     48BF8F;%
+  light,       25B179;%
+  main,        00A764;%
+  dark,        00834E;%
+  darker,      00673D;%
+  alert,       7DE32F;%
+  example,     2C70A9;%
+  table,       8dc9b1
+}
+
+\definecolorset{HTML}{}{Grey}{%
+  lighter,	   808080;%
+  light, 		   646464;%
+  main, 		   484848;%
+  dark, 		   383838;%
+  darker, 	   2A2A2A;%
+  text,		     D9D9D9;%
+  alert,       b5b5b5;%
+  example,     b0b0b0;%
+  table,       C9C9C9
+}
+
+\colorlet{lighterColor}{lighterGrey}
+\colorlet{lightColor}{lightGrey}
+\colorlet{mainColor}{mainGrey}
+\colorlet{darkColor}{darkGrey}
+\colorlet{darkerColor}{darkerGrey}
+% Only used as a default for colored text, to be overridden by Purple/Red/Blue
+% textFG set below is the body text color.
+\colorlet{textColor}{textGrey}
+
+% Theme Options for color pallets
+\DeclareOptionBeamer{purple}{%
+  \colorlet{lighterColor}{cylighterpurple}
+  \colorlet{lightColor}{cylightpurple}
+  \colorlet{mainColor}{cymainpurple}
+  \colorlet{darkColor}{cydarkpurple}
+  \colorlet{darkerColor}{cydarkerpurple}
+  \colorlet{alertColor}{cyalertpurple}
+  \colorlet{exampleColor}{cyexamplepurple}
+  \colorlet{tableColor}{cytablepurple}
+}
+\DeclareOptionBeamer{red}{%
+  \colorlet{lighterColor}{cylighterred}
+  \colorlet{lightColor}{cylightred}
+  \colorlet{mainColor}{cymainred}
+  \colorlet{darkColor}{cydarkred}
+  \colorlet{darkerColor}{cydarkerred}
+  \colorlet{alertColor}{cyalertred}
+  \colorlet{exampleColor}{cyexamplered}
+  \colorlet{tableColor}{cytablered}
+}
+\DeclareOptionBeamer{blue}{%
+  \colorlet{lighterColor}{cylighterblue}
+  \colorlet{lightColor}{cylightblue}
+  \colorlet{mainColor}{cymainblue}
+  \colorlet{darkColor}{cydarkblue}
+  \colorlet{darkerColor}{cydarkerblue}
+  \colorlet{alertColor}{cyalertblue}
+  \colorlet{exampleColor}{cyexampleblue}
+  \colorlet{tableColor}{cytableblue}
+}
+\DeclareOptionBeamer{green}{%
+  \colorlet{lighterColor}{cylightergreen}
+  \colorlet{lightColor}{cylightgreen}
+  \colorlet{mainColor}{cymaingreen}
+  \colorlet{darkColor}{cydarkgreen}
+  \colorlet{darkerColor}{cydarkergreen}
+  \colorlet{alertColor}{cyalertgreen}
+  \colorlet{exampleColor}{cyexamplegreen}
+  \colorlet{tableColor}{cytablegreen}
+}
+
+\ProcessOptionsBeamer
+
+% Giving color definitions easier names for future blocks. 
+\colorlet{slideBG}{darkerGrey}
+\colorlet{textFG}{textGrey}
+\colorlet{blockTitle}{darkGrey}
+\colorlet{blockBody}{tableGrey}
+\colorlet{emphColor}{lighterColor}
+\colorlet{blockColor}{lightColor}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor = emphColor,
+  urlcolor  = emphColor,
+  citecolor = emphColor,
+  anchorcolor = emphColor
+}
+
+% Beamer color setup
+\setbeamercolor{footline}{fg=mainColor, bg=slideBG} % Footline, in this case, an actual footer line. 
+\setbeamercolor{normal text}{fg=textFG, bg=slideBG} % Slide
+\setbeamercolor{title}{fg=textFG, bg=} % Title Slide Title Text
+\setbeamercolor{structure}{fg=textFG, bg=} % Slide Titles
+
+\setbeamercolor{block title}{fg=blockTitle, bg=blockColor} % Block Titles
+\setbeamercolor{block body}{fg=slideBG, bg=tableGrey}
+
+\setbeamercolor{block title alerted}{fg=blockTitle, bg=alertColor} % Example Block Titles
+\setbeamercolor{block body alerted}{fg=slideBG, bg=tableGrey} % Inverted fb/bg inside block. 
+
+\setbeamercolor{block title example}{fg=blockTitle, bg=exampleColor} % Example Block Titles
+\setbeamercolor{block body example}{fg=slideBG, bg=tableGrey} % Inverted fb/bg inside block. 
+
+\setbeamercolor{alerted text}{fg=mainColor}
+\setbeamercolor{author}{fg=textFG}
+\setbeamercolor{date}{fg=textFG}
+
+
+
+%-------------------------------------------------------------------
+% Title Page
+%-------------------------------------------------------------------
+
+\newcommand{\titleimage}[1]{\def\TitleImagePath{#1}}
+\titleimage{Assets/title_logo}
+
+\setbeamertemplate{title page}{%
+  \vspace*{0.6\textheight}
+  \begin{center}
+    \begin{minipage}[0.5\paperheight]{.8\textwidth} % Specify the desired width of the minipage
+      \centering
+      {\usebeamerfont{title}\inserttitle\par}
+      \vspace{1ex}
+      {\usebeamerfont{subtitle}\insertsubtitle\par}
+      \vspace{3ex}
+      {\usebeamerfont{author}\usebeamercolor[fg]{author}\textbf{\insertauthor}\par}
+    \end{minipage}
+  \end{center}
+}
+
+
+% Modified \TikzSplitSlide to create a solid box of color under the slide
+\newcommand{\TikzSplitSlide}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Fills the background with mainColor
+    \fill[mainColor]  ( 1.00\paperwidth,  0.0\paperheight) --
+    ( 1.00\paperwidth, -1.0\paperheight) --
+    ( 0.90\paperwidth, -1.0\paperheight) --
+    ( 0.90\paperwidth,  0.0\paperheight) -- cycle;
+    \fill[mainColor]  ( 0.00\paperwidth,  0.0\paperheight) --
+    ( 0.00\paperwidth, -1.0\paperheight) --
+    ( 0.10\paperwidth, -1.0\paperheight) --
+    ( 0.10\paperwidth,  0.0\paperheight) -- cycle;
+  \end{tikzpicture}%
+}
+
+% Overwrite the maketitle command for the title page
+\renewcommand{\maketitle}{
+  \begingroup
+  \setbeamertemplate{background}{\TikzSplitSlide}
+  \begin{frame}[c,plain,noframenumbering]%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node at (0.5\textwidth,-0.30\paperheight) [inner sep=0pt, anchor=center] {%
+        \includegraphics[height=0.5\paperheight]{\TitleImagePath}%
+      };
+    \end{tikzpicture}%
+    \titlepage%
+  \end{frame}%
+  \endgroup
+}
+
+%-------------------------------------------------------------------
+% Section Page
+%-------------------------------------------------------------------
+
+\defbeamertemplate*{section page}{focus}{%
+  \begin{minipage}[0.5\paperheight]{.8\textwidth}%
+    \begin{center}
+      {\usebeamerfont{sectiontitle}\insertsection}%
+    \end{center}
+  \end{minipage}
+}
+
+\newcommand{\makesection}{%
+  \begingroup
+  \setbeamertemplate{background}{\TikzSplitSlide}%
+  \begin{frame}[plain,noframenumbering]%
+    \vspace*{0.1\paperheight}%
+    \begin{center}
+      \sectionpage%
+    \end{center}
+  \end{frame}%
+  \endgroup
+}
+
+
+
+
+%-------------------------------------------------------------------
+% Frametitle
+%-------------------------------------------------------------------
+
+\defbeamertemplate{frametitle}{ringnull}{%
+  \vspace*{0.05\paperheight}
+  \begin{beamercolorbox}[]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle\par
+    \ifx\insertframesubtitle\@empty\else % Only insert the framesubtitle if it's not empty
+      \usebeamerfont{framesubtitle}\insertframesubtitle
+    \fi
+  \end{beamercolorbox}%
+}
+
+
+\newif\ifhidesubtitle
+\hidesubtitlefalse % Default is false
+\newcommand{\hidesubtitle}{\hidesubtitletrue}
+\newcommand{\showsubtitle}{\hidesubtitlefalse}
+
+
+
+% Modify the automated subtitle command to check this flag
+\pretocmd\beamer@checkframetitle{%
+  \ifhidesubtitle
+    \framesubtitle{} % Hide the subtitle if flag is true
+  \else
+    \ifnum\value{section}=0
+      \framesubtitle{} % Also do not set a subtitle if section number is 0
+    \else
+      \framesubtitle{\thesection:\,\secname} % Set the subtitle to section number and name
+    \fi
+  \fi
+}{}{}
+
+
+%-------------------------------------------------------------------
+% Headless
+%-------------------------------------------------------------------
+
+\defbeamertemplate{frametitle}{headless}{}
+\define@key{beamerframe}{headless}[true]{\setbeamertemplate{frametitle}[headless]}
+\BeforeBeginEnvironment{frame}{\setbeamertemplate{frametitle}[ringnull]}
+
+%-------------------------------------------------------------------
+% Footline 
+%-------------------------------------------------------------------
+
+\newcommand{\insertprogressbar}{
+  % Calculate the progress ratio
+  \pgfmathsetmacro{\progressratio}{\insertframenumber/\inserttotalframenumber}%
+  % Draw the progress bar
+  \begin{tikzpicture}
+    \fill[fg] (0,0) rectangle (\progressratio*\paperwidth,0.5mm);
+  \end{tikzpicture}
+}
+
+% Override the footline template
+\defbeamertemplate{footline}{ringnull}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.1cm]{footline}
+    \insertprogressbar
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}[ringnull]
+
+%-------------------------------------------------------------------
+% Table of Contents
+%-------------------------------------------------------------------
+
+% style of section presented in the table of contents
+\setbeamertemplate{section in toc}[triangle]
+\setbeamercolor{section in toc}{fg=textFG, bg=slideBG}
+%Hide subsection in toc
+\setbeamertemplate{subsection in toc}{}
+
+%-------------------------------------------------------------------
+% Custom Enviroments
+%-------------------------------------------------------------------
+
+\newenvironment{colorblock}[3][textFG]{% Args: Foreground Color, Background Color, Block Title
+  \begingroup
+  \setbeamercolor{block title}{fg=#1,bg=#2}
+  \setbeamercolor{block body} {fg=#1,bg=#2}
+  \begin{block}{#3}
+    }{%
+  \end{block}
+  \endgroup
+}
+
+
+%-------------------------------------------------------------------
+% Backmatter
+%-------------------------------------------------------------------
+
+% Define backmatter
+\newcommand{\backmatter}{
+  \begingroup
+  \hidesubtitle
+  \section{Appendix}
+
+  \begin{frame}[allowframebreaks,plain,noframenumbering]{References}
+    \nocite{*}
+    \printbibliography
+  \end{frame}
+
+  \begin{frame}[plain,headless,noframenumbering,c]{Thanks}
+    \centering
+    \begin{minipage}{\textwidth}
+      \usebeamercolor[fg]{normal text}
+      \centering
+      \Huge \textsl{\\Thank you}
+    \end{minipage}
+  \end{frame}
+  \endgroup
+}
+
+
+%-------------------------------------------------------------------
+% TColorBoxes & TCBListings
+%-------------------------------------------------------------------
+
+% Disable Italics within listings
+\AtBeginEnvironment{mintedblock}{\let\itshape\relax}
+\AtBeginEnvironment{mintedlisting}{\let\itshape\relax}
+
+% Grey box to put behind tables so I can avoid using the ugly tabular syntax every time
+\newtcolorbox{greytablebox}{
+  colback=tableGrey,
+  sharp corners,
+  boxrule=0pt,
+  boxsep=0pt,
+  left=0pt, right=0pt, top=0pt, bottom=0pt,
+  hbox
+}
+
+\tcbuselibrary{minted, skins}
+
+\newtcblisting{mintedblock}[2][latex]{
+  bicolor,
+  center,
+  fonttitle=\bfseries\ttfamily
+  listing engine=minted,
+  colback=textFG,
+  colframe=mainGrey,
+  coltitle=slideBG,
+  title style={fill=blockColor},
+  toptitle=2pt,
+  bottomtitle=2pt,
+  halign title=center,
+  listing only,
+  minted style=lovelace,
+  minted options={autogobble, linenos, breaklines=true, fontsize=\footnotesize, fontfamily=tt},
+  arc=2mm, % Rounded corners
+  minted language=#1,
+  title=#2,
+  fonttitle=\bfseries,
+  left=7mm,
+  right=2mm,
+  bottom=2mm,
+  width=\columnwidth, % Ensure it respects the document margins
+  overlay={\begin{tcbclipinterior}\fill[textFG] (frame.south west)
+        rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}
+}
+
+\newtcblisting{mintedlisting}[1][latex]{
+  center,
+  fonttitle=\bfseries\ttfamily
+  listing engine=minted,
+  colback=textFG,
+  colframe=mainGrey,
+  listing only,
+  minted style=lovelace,
+  minted options={autogobble, linenos, breaklines=true, fontsize=\footnotesize, fontfamily=tt},
+  arc=2mm, % Rounded corners
+  fonttitle=\bfseries,
+  left=7mm,
+  right=2mm,
+  bottom=2mm,
+  width=\columnwidth, % Ensure it respects the document margins
+  overlay={\begin{tcbclipinterior}\fill[textFG] (frame.south west)
+        rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}},
+  minted language=#1,
+}
+
+%-------------------------------------------------------------------
+% EOF
+%-------------------------------------------------------------------
+
+\mode<all>

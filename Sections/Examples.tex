@@ -1,0 +1,141 @@
+\section{Examples}
+
+\begin{frame}[headless]{}
+	\sectionpage
+\end{frame}
+
+\begin{frame}{Simple Slide}
+	This is a simple slide.
+\end{frame}
+
+\begin{frame}[noframenumbering]{No Slide Numbering}
+	This slide is not numbered and is citing reference \cite{knuth74}.
+\end{frame}
+
+\begin{frame}{Blocks}
+	These blocks are part of 1 slide, to be displayed consecutively.
+	\begin{block}{Block}
+		Text.
+	\end{block}
+	\pause % Automatically creates a new "page" split between the above and above + below
+	\begin{alertblock}{Alert block}
+		Alert \alert{text}.
+	\end{alertblock}
+	\pause % Automatically creates a new "page" split between the above and above + below
+	\begin{exampleblock}{Example block}
+		Example Text
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Columns}
+	\begin{columns}
+		\column{0.45\textwidth}
+			This text appears in the left column and wraps neatly with a margin between columns.
+		
+		\column{0.45\textwidth}
+			\includegraphics[width=\linewidth]{Assets/placeholder.jpg}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Lists}
+	\begin{columns}[T, onlytextwidth] % T for top align, onlytextwidth to suppress the margin between columns
+		\column{0.33\textwidth}
+			Items:
+			\begin{itemize}
+				\item Item 1
+				\begin{itemize}
+					\item Subitem 1.1
+					\item Subitem 1.2
+				\end{itemize}
+				\item Item 2
+				\item Item 3
+			\end{itemize}
+		
+		\column{0.33\textwidth}
+			Enumerations:
+			\begin{enumerate}
+				\item First
+				\item Second
+				\begin{enumerate}
+					\item Sub-first
+					\item Sub-second
+				\end{enumerate}
+				\item Third
+			\end{enumerate}
+		
+		\column{0.33\textwidth}
+			Descriptions:
+			\begin{description}
+				\item[First] Yes.
+				\item[Second] No.
+			\end{description}
+	\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Blocks}
+    \begin{itemize}
+        \item This template uses tcolorboxes for callouts, and has a custom enviroment defined for colored boxes.
+    \end{itemize}
+    \begin{columns}[T, onlytextwidth]
+        \setlength{\columnsep}{2pt} % Reduce the space between columns
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Regular Block}
+                You can use regular blocks for callouts like this.
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{colorblock}[slideBG]{blockColor}{Color Block}
+                You can use  color blocks for callouts like this.
+            \end{colorblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Tables}
+    \begin{itemize}
+        \item To put a grey box behind a table, use the following:
+    \end{itemize}
+    \begin{mintedblock}[latex]{Grey Tables}
+        \begin{table}
+            \begin{table}
+            \begin{greytablebox}
+                \begin{tabular}{}
+                    % Your table stuff here
+                \end{tabular}
+            \end{greytablebox}
+        \end{table}
+    \end{mintedblock}
+\end{frame}
+
+
+\begin{frame}[headless,c]{Headless}
+There is a custom frame option, \texttt{headless}, that removes the frame title.
+\end{frame}
+
+
+\begin{frame}[fragile]{Code}
+    There are two ways to display code - this is the block...
+    \begin{mintedblock}[c]{Mintedblock}
+#include <stdio.h>
+int main() {
+	// printf() displays the string inside quotation
+	printf("Hello, World!");
+	return 0;
+}
+    \end{mintedblock}
+ ... and this is the listing.
+    \begin{mintedlisting}[rust]
+fn main() {
+	println!("Hello World!");
+}
+    \end{mintedlisting}
+\end{frame}
+
+\begin{frame}{Font Tests}
+	This is regular text.\\
+	\textbf{This is bold text.}\\
+	\textit{This is italic text.}\\
+	\texttt{This is monospaced text.}
+  \end{frame}
