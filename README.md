@@ -23,28 +23,28 @@ I created this template for myself, to use in my videos and for my own needs.
 - An optional watermark. 
 
 # Examples
-
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-red.jpg?raw=true " alt="Title Red" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-blue.jpg?raw=true " alt="Title Blue" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-purple.jpg?raw=true " alt="Title Purple" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-green.jpg?raw=true " alt="Title Green" width="24%"/>
+<p align="center">
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-red.jpg?raw=true " alt="Title Red" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-blue.jpg?raw=true " alt="Title Blue" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-purple.jpg?raw=true " alt="Title Purple" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-green.jpg?raw=true " alt="Title Green" width="74%"/>
 <br>
 <br>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-red.jpg?raw=true " alt="Blocks Red" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-blue.jpg?raw=true " alt="Blocks Blue" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-purple.jpg?raw=true " alt="Blocks Purple" width="24%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-green.jpg?raw=true " alt="Blocks Green" width="24%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-red.jpg?raw=true " alt="Blocks Red" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-blue.jpg?raw=true " alt="Blocks Blue" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-purple.jpg?raw=true " alt="Blocks Purple" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Blocks-green.jpg?raw=true " alt="Blocks Green" width="74%"/>
 <br>
 <br>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Pallets.jpg?raw=true " alt="Pallets" width="49%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Pallets-2.jpg?raw=true " alt="Pallets 2" width="49%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Pallets.jpg?raw=true " alt="Pallets" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Pallets-2.jpg?raw=true " alt="Pallets 2" width="74%"/>
 <br>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Columns.jpg?raw=true " alt="Columns" width="49%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Headless.jpg?raw=true " alt="Headless" width="49%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Columns.jpg?raw=true " alt="Columns" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Headless.jpg?raw=true " alt="Headless" width="74%"/>
 <br>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Listings.jpg?raw=true " alt="Listings" width="49%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Lists.jpg?raw=true " alt="Lists" width="49%"/>
-
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Listings.jpg?raw=true " alt="Listings" width="74%"/>
+<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Lists.jpg?raw=true " alt="Lists" width="74%"/>
+</p>
 # Building
 
 This LaTeX template uses TikZ for the title, fontspec for custom fonts, biblatex/biuber for the bibliography. 
