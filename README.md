@@ -45,6 +45,7 @@ I created this template for myself, to use in my videos and for my own needs.
 <img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Listings.jpg?raw=true " alt="Listings" width="74%"/>
 <img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Lists.jpg?raw=true " alt="Lists" width="74%"/>
 </p>
+
 # Building
 
 This LaTeX template uses TikZ for the title, fontspec for custom fonts, biblatex/biuber for the bibliography. 
