@@ -24,9 +24,6 @@ I created this template for myself, to use in my videos and for my own needs.
 
 # Examples
 <p align="center">
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-red.jpg?raw=true " alt="Title Red" width="74%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-blue.jpg?raw=true " alt="Title Blue" width="74%"/>
-<img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-purple.jpg?raw=true " alt="Title Purple" width="74%"/>
 <img src="https://github.com/RingNull/ringnull-latex-template/blob/media/Images/Title-green.jpg?raw=true " alt="Title Green" width="74%"/>
 <br>
 <br>
